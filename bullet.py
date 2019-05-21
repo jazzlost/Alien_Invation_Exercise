@@ -9,7 +9,7 @@ class Bullet(Sprite):
 
         # (0,0)处初始化子弹矩形，再设置位置
         self.rect = pygame.Rect(0, 0, settings.width, settings.height)
-        self.centerx = ship.rect.top
+        self.reect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
 
         # 储存用小数表示的子弹位置
