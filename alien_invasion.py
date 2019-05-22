@@ -27,9 +27,3 @@ def run_game():
         bullets.update() 
         # 屏幕刷新
         gf.update_screen(game_setting, screen, ship, bullets)
-
-
-
-
-
-run_game()
