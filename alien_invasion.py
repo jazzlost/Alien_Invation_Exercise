@@ -22,14 +22,11 @@ def run_game():
     # 游戏loop
     while True:
         # 键盘和鼠标事件
-        gf.check_events(ship)
+        gf.check_events(game_setting, screen, ship, bullets)
         ship.update()
-        bullets.update() 
+
+        # 子弹刷新
+        gf.update_bullets(bullets)
+
         # 屏幕刷新
-        gf.update_screen(game_setting, screen, ship)
-
-
-
-
-
-run_game()
+        gf.update_screen(game_setting, screen, ship, bullets)
