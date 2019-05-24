@@ -5,7 +5,6 @@ import game_functions as gf
 from settings import Settings
 from ship import Ship
 
-
 def run_game():
     # 初始化屏幕对象
     pygame.init()
@@ -18,6 +17,13 @@ def run_game():
 
     # 创建一个用于储存子弹的编组
     bullets = Group()
+    # 创建外星人编组
+    aliens = Group()
+
+    # 创建一个外星人
+    gf.create_fleet(game_setting, screen, aliens)
+    
+    
     
     # 游戏loop
     while True:
@@ -29,4 +35,4 @@ def run_game():
         gf.update_bullets(bullets)
 
         # 屏幕刷新
-        gf.update_screen(game_setting, screen, ship, bullets)
+        gf.update_screen(game_setting, screen, ship, aliens, bullets)
