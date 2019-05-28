@@ -21,7 +21,7 @@ def run_game():
     aliens = Group()
 
     # 创建一个外星人
-    gf.create_fleet(game_setting, screen, aliens)
+    gf.create_fleet(game_setting, screen, ship, aliens)
     
     
     
