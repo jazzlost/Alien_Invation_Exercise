@@ -5,6 +5,7 @@ import game_functions as gf
 from settings import Settings
 from ship import Ship
 from game_stats import GameStats
+from button import Button
 
 def run_game():
     # 初始化屏幕对象
@@ -15,6 +16,9 @@ def run_game():
 
     # 创建一个用于储存游戏统计信息的实例
     stats = GameStats(game_setting)
+
+    # 创建play按钮
+    play_button = Button(game_setting, screen, "Play")
 
     # 创建飞船
     ship = Ship(game_setting, screen)
@@ -31,7 +35,7 @@ def run_game():
     # 游戏loop
     while True:
         # 键盘和鼠标事件
-        gf.check_events(game_setting, screen, ship, bullets)
+        gf.check_events(game_setting, screen, stats, play_button, ship, aliens, bullets)
         
         if stats.game_active:
                 # 飞船刷新
@@ -44,4 +48,4 @@ def run_game():
                 gf.update_aliens(game_setting, stats, screen, aliens, ship, bullets)
 
         # 屏幕刷新
-        gf.update_screen(game_setting, screen, ship, aliens, bullets)
+        gf.update_screen(game_setting, screen, stats, ship, aliens, bullets, play_button)
