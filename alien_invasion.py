@@ -32,7 +32,7 @@ def run_game():
         ship.update()
 
         # 子弹刷新
-        gf.update_bullets(bullets)
+        gf.update_bullets(aliens, bullets)
 
         # 外星人刷新
         gf.update_aliens(game_setting, aliens)
