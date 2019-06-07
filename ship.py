@@ -3,6 +3,7 @@ import pygame
 from settings import Settings
 from pygame.sprite import Sprite
 
+
 class Ship(Sprite):
 
     def __init__(self, settings, screen):
@@ -22,7 +23,7 @@ class Ship(Sprite):
 
         # center调整为float
         self.center = float(self.rect.centerx)
-        
+
         # 移动标志
         self.moving_right = False
         self.moving_left = False
@@ -36,13 +37,9 @@ class Ship(Sprite):
 
         self.rect.centerx = self.center
 
-
     def blitme(self):
         # 在指定位置绘制飞船
         self.screen.blit(self.image, self.rect)
 
-
     def center_ship(self):
         self.center = self.screen_rect.centerx
-
-

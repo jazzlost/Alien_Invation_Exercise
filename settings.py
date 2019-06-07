@@ -15,7 +15,7 @@ class Settings():
 
         # 子弹设置
         self.bullet_speed_factor = 3
-        self.bullet_width = 300
+        self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (60, 60, 60)
         self.bullets_allowed = 6
@@ -37,7 +37,6 @@ class Settings():
         # 游戏序列化数据
         self.data_file = 'data_file.txt'
 
-
     def initialize_dynamic_settings(self):
         # 重置等级相关变化量
         self.ship_speed_factor = 3
@@ -45,12 +44,9 @@ class Settings():
         self.alien_speed_factor = 1
         self.fleet_direction = 1
 
-
     def increase_speed(self):
         self.ship_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale
         self.alien_speed_factor *= self.speedup_scale
 
         self.alien_point = int(self.alien_points * self.score_scale)
-
-

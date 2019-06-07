@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
+
 class Bullet(Sprite):
 
     def __init__(self, settings, screen, ship):
@@ -8,7 +9,8 @@ class Bullet(Sprite):
         self.screen = screen
 
         # (0,0)处初始化子弹矩形，再设置位置
-        self.rect = pygame.Rect(0, 0, settings.bullet_width, settings.bullet_height)
+        self.rect = pygame.Rect(
+            0, 0, settings.bullet_width, settings.bullet_height)
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
 
